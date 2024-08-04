@@ -6,12 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "AI",
-    "Developer Productivity",
-    "LLM",
-    "vim"
-  ],
+  "keywords": ["AI", "Developer Productivity", "LLM", "vim"],
+  "pnpm": {
+    "overrides": {
+      "whatwg-url": "13.0.0"
+    }
+  },
   "author": "Brian Hurlow",
   "license": "ISC",
   "dependencies": {
