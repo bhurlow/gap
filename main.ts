@@ -2,6 +2,7 @@
 
 import fs from 'fs'
 import { ask } from './llm'
+import { getStdin } from 'ts-stdin'
 import yargs from 'yargs/yargs'
 
 const argv = yargs(process.argv.slice(2))
@@ -10,11 +11,11 @@ const argv = yargs(process.argv.slice(2))
   })
   .parseSync()
 
-const main = async () => {
+const getInput = async () => {
   const [inputFile] = argv._
 
   if (!inputFile) {
-    throw new Error('no file')
+    return getStdin()
   }
 
   const exists = fs.existsSync(String(inputFile))
@@ -23,9 +24,12 @@ const main = async () => {
     throw new Error('file not found')
   }
 
-  const contents = fs.readFileSync(inputFile, 'utf8')
+  return fs.readFileSync(inputFile, 'utf8')
+}
 
-  const res = await ask(contents)
+const main = async () => {
+  const input = await getInput()
+  const res = await ask(input)
 
   const msg = res.content[0]
 
