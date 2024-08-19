@@ -8,3 +8,11 @@ function cube(x) {
   {{FILL_HERE}}
 }
 ```
+
+## Installation
+
+clone the project, `pnpm install` and `pnpm link --global` to link the `gap` cli command. Then optionally in your editor you can pass the current buffer in like:
+
+```lua
+vim.keymap.set("n", "rg", "<cmd>%!cat % | gap<CR>", { })
+```

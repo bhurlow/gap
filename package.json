@@ -2,11 +2,8 @@
   "name": "gap",
   "version": "0.1.0",
   "description": "use LLMs to fill gaps in your programs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": ["AI", "Developer Productivity", "LLM", "vim"],
+  "bin": "./bin/main.js",
   "pnpm": {
     "overrides": {
       "whatwg-url": "13.0.0"

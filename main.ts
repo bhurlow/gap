@@ -29,6 +29,11 @@ const getInput = async () => {
 
 const main = async () => {
   const input = await getInput()
+
+  if (!input) {
+    throw new Error('no input')
+  }
+
   const res = await ask(input)
 
   const msg = res.content[0]
