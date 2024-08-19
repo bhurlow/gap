@@ -11,7 +11,9 @@ function cube(x) {
 
 ## Installation
 
-clone the project, `pnpm install` and `pnpm link --global` to link the `gap` cli command. Then optionally in your editor you can pass the current buffer in like:
+First, put an anthropic token into `~/.config/anthropic.token`. The token should have access to Claude 3.5 Sonnet.
+
+Next, clone the project, `pnpm install` and `pnpm link --global` to link the `gap` cli command. Then optionally in your editor you can pass the current buffer in like:
 
 ```lua
 vim.keymap.set("n", "rg", "<cmd>%!cat % | gap<CR>", { })
